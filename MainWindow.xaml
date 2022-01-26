@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+		<WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
+			<Button Name="btnOpenFile" Click="btnOpenFile_Click">Open file</Button>
+			<ListView x:Name="ListViewPeople">
+				<ListView.View>
+					<GridView>
+						<GridViewColumn Header="First name" Width="100" DisplayMemberBinding="{Binding Path=FirstName}"/>
+						<GridViewColumn Header="Last name" Width="150" DisplayMemberBinding="{Binding Path=LastName}"/>
+						<GridViewColumn Header="ID" Width="40" DisplayMemberBinding="{Binding Path=ID}"/>
+						<GridViewColumn Header="Email" Width="200" DisplayMemberBinding="{Binding Path=Email}"/>
+					</GridView>
+				</ListView.View>
+			</ListView>
+		</WrapPanel>
     </Grid>
 </Window>

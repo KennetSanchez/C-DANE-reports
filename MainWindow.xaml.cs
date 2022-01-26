@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Windows;
+using Microsoft.Win32;
 
 namespace C_DANE_reports
 {
@@ -23,6 +26,16 @@ namespace C_DANE_reports
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnOpenFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "CSV files (*.csv)|*.csv|XML files (*.xml)|*.xml";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                
+            }
         }
     }
 }
