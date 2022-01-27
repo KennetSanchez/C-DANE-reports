@@ -12,10 +12,11 @@
 			<ListView x:Name="ListViewPeople">
 				<ListView.View>
 					<GridView>
-						<GridViewColumn Header="First name" Width="100" DisplayMemberBinding="{Binding Path=FirstName}"/>
-						<GridViewColumn Header="Last name" Width="150" DisplayMemberBinding="{Binding Path=LastName}"/>
-						<GridViewColumn Header="ID" Width="40" DisplayMemberBinding="{Binding Path=ID}"/>
-						<GridViewColumn Header="Email" Width="200" DisplayMemberBinding="{Binding Path=Email}"/>
+						<GridViewColumn Header="REGION" Width="100" DisplayMemberBinding="{Binding Path=Region}"/>
+						<GridViewColumn Header="CODIGO DANE" Width="120" DisplayMemberBinding="{Binding Path=CodigoDane}"/>
+						<GridViewColumn Header="DEPARTAMENTO" Width="120" DisplayMemberBinding="{Binding Path=Departamento}"/>
+						<GridViewColumn Header="CODIGO DANE" Width="120" DisplayMemberBinding="{Binding Path=CodigoDane2}"/>
+						<GridViewColumn Header="MUNICIPIO" Width="100" DisplayMemberBinding="{Binding Path=Municipio}"/>
 					</GridView>
 				</ListView.View>
 			</ListView>
