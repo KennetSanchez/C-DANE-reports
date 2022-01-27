@@ -24,8 +24,10 @@ namespace C_DANE_reports
     /// </summary>
     public partial class MainWindow : Window
     {
+        private String separator;
         public MainWindow()
         {
+            separator = ",";
             InitializeComponent();
         }
 
@@ -37,16 +39,24 @@ namespace C_DANE_reports
             {
                 fileChooserPane.Visibility = Visibility.Collapsed;
                 tablePane.Visibility = Visibility.Visible;
-                readData(openFileDialog.FileName);
+                try
+                {
+                    readData(openFileDialog.FileName);
+                }
+                
+                catch (FileNotFoundException exc)
+                {
+                    Console.WriteLine(exc.ToString());
+                }
             }
         }
 
         public class Info
         {
-            public string Region { get; set; }
-            public string CDRegion { get; set; }
-            public string Departamento { get; set; }
+            public string Tipo { get; set; }
             public string CDDepartamento { get; set; }
+            public string Departamento { get; set; }
+            public string CDMunicipio { get; set; }
             public string Municipio { get; set; }
 
         }
@@ -55,7 +65,11 @@ namespace C_DANE_reports
         {
             String[] lines = File.ReadAllLines(path);
             ObservableCollection<Info> c = new ObservableCollection<Info>();
-            c.Add(new Info() { Region = "ejemplo", CDRegion = "ejemplo2", Departamento = "ejemplo3", CDDepartamento = "awfnoawf", Municipio = "awfaf" });
+            for(int i = 1; i < 1121; i++)
+            {
+                String[] line = lines[i].Split(separator);
+                c.Add(new Info() { Tipo=line[4],CDDepartamento=line[0],Departamento=line[2],CDMunicipio=line[1],Municipio=line[3]});
+            }
             listViewDane.ItemsSource = c;
         }
 

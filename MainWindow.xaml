@@ -54,10 +54,10 @@
             <ListView x:Name="listViewDane" FontFamily="Consolas" Width="562" Grid.ColumnSpan="2" Margin="185,68,15,48">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="REGIÓN" Width="100" DisplayMemberBinding="{Binding Region}"/>
-                        <GridViewColumn Header="CÓDIGO DANE" Width="120" DisplayMemberBinding="{Binding CDRegion}"/>
-                        <GridViewColumn Header="DEPARTAMENTO" Width="120" DisplayMemberBinding="{Binding Departamento}"/>
+                        <GridViewColumn Header="TIPO" Width="100" DisplayMemberBinding="{Binding Tipo}"/>
                         <GridViewColumn Header="CÓDIGO DANE" Width="120" DisplayMemberBinding="{Binding CDDepartamento}"/>
+                        <GridViewColumn Header="DEPARTAMENTO" Width="120" DisplayMemberBinding="{Binding Departamento}"/>
+                        <GridViewColumn Header="CÓDIGO DANE" Width="120" DisplayMemberBinding="{Binding CDMunicipio}"/>
                         <GridViewColumn Header="MUNICIPIO" Width="100" DisplayMemberBinding="{Binding Municipio}"/>
                     </GridView>
                 </ListView.View>
