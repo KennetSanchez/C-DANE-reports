@@ -14,7 +14,57 @@
             <Button Content="Elegir archivo" HorizontalAlignment="Center" Margin="0,204,0,0" VerticalAlignment="Top" Click="btnOpenFile_Click" FontFamily="Consolas" Background="#FFBE0C4D" Foreground="White" Height="23" Width="120" BorderThickness="0,1,1,1"/>
 
         </Grid>
+        <Grid x:Name="tablePane" Margin="0,10,0,10" HorizontalAlignment="Center" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="185*"/>
+                <ColumnDefinition Width="196*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Datos encontrados" HorizontalAlignment="Left" Margin="0,18,0,0" FontFamily="Consolas" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="22,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="140" FontFamily="Consolas" FontSize="14"><Run Language="es-mx" Text="Filtrar municipios por inicial"/></TextBlock>
+            <ComboBox  HorizontalAlignment="Left" Margin="46,161,0,0" VerticalAlignment="Top" Width="92" FontFamily="Consolas">
+                <Label Content="A" FontFamily="Consolas"/>
+                <Label Content="B" FontFamily="Consolas"/>
+                <Label Content="C" FontFamily="Consolas"/>
+                <Label Content="D" FontFamily="Consolas"/>
+                <Label Content="E" FontFamily="Consolas"/>
+                <Label Content="F" FontFamily="Consolas"/>
+                <Label Content="G" FontFamily="Consolas"/>
+                <Label Content="H" FontFamily="Consolas"/>
+                <Label Content="I" FontFamily="Consolas"/>
+                <Label Content="J" FontFamily="Consolas"/>
+                <Label Content="K" FontFamily="Consolas"/>
+                <Label Content="L" FontFamily="Consolas"/>
+                <Label Content="M" FontFamily="Consolas"/>
+                <Label Content="N" FontFamily="Consolas"/>
+                <Label Content="Ñ" FontFamily="Consolas"/>
+                <Label Content="O" FontFamily="Consolas"/>
+                <Label Content="P" FontFamily="Consolas"/>
+                <Label Content="Q" FontFamily="Consolas"/>
+                <Label Content="R" FontFamily="Consolas"/>
+                <Label Content="S" FontFamily="Consolas"/>
+                <Label Content="T" FontFamily="Consolas"/>
+                <Label Content="U" FontFamily="Consolas"/>
+                <Label Content="V" FontFamily="Consolas"/>
+                <Label Content="W" FontFamily="Consolas"/>
+                <Label Content="X" FontFamily="Consolas"/>
+                <Label Content="Y" FontFamily="Consolas"/>
+                <Label Content="Z" FontFamily="Consolas"/>
+            </ComboBox>
+            <Button Click="btnFilter_Click" Content="Filtrar" HorizontalAlignment="Left" Margin="46,207,0,0" VerticalAlignment="Top" Background="#FFBE0C4D" FontFamily="Consolas" Foreground="White" Height="25" Width="92"/>
+            <ListView x:Name="ListViewPeople" FontFamily="Consolas" Width="562" Grid.ColumnSpan="2" Margin="185,68,15,48">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="REGIÓN" Width="100" DisplayMemberBinding="{Binding Region}"/>
+                        <GridViewColumn Header="CÓDIGO DANE" Width="120" DisplayMemberBinding="{Binding CodigoDane}"/>
+                        <GridViewColumn Header="DEPARTAMENTO" Width="120" DisplayMemberBinding="{Binding Departamento}"/>
+                        <GridViewColumn Header="CÓDIGO DANE" Width="120" DisplayMemberBinding="{Binding CodigoDane2}"/>
+                        <GridViewColumn Header="MUNICIPIO" Width="100" DisplayMemberBinding="{Binding Municipio}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
 
+
+        </Grid>
 
     </Grid>
 </Window>

@@ -35,8 +35,13 @@ namespace C_DANE_reports
             if (openFileDialog.ShowDialog() == true)
             {
                 fileChooserPane.Visibility = Visibility.Collapsed;
+                tablePane.Visibility = Visibility.Visible;
             }
         }
 
+        private void btnFilter_Click(object sender, RoutedEventArgs e)
+        {
+
+        }    
     }
 }
