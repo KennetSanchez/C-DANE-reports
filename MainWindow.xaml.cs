@@ -34,8 +34,9 @@ namespace C_DANE_reports
             openFileDialog.Filter = "CSV files (*.csv)|*.csv|XML files (*.xml)|*.xml";
             if (openFileDialog.ShowDialog() == true)
             {
-                
+                fileChooserPane.Visibility = Visibility.Collapsed;
             }
         }
+
     }
 }

@@ -6,20 +6,15 @@
         xmlns:local="clr-namespace:C_DANE_reports"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
+
     <Grid>
-		<WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
-			<Button Name="btnOpenFile" Click="btnOpenFile_Click">Open file</Button>
-			<ListView x:Name="ListViewPeople">
-				<ListView.View>
-					<GridView>
-						<GridViewColumn Header="REGION" Width="100" DisplayMemberBinding="{Binding Path=Region}"/>
-						<GridViewColumn Header="CODIGO DANE" Width="120" DisplayMemberBinding="{Binding Path=CodigoDane}"/>
-						<GridViewColumn Header="DEPARTAMENTO" Width="120" DisplayMemberBinding="{Binding Path=Departamento}"/>
-						<GridViewColumn Header="CODIGO DANE" Width="120" DisplayMemberBinding="{Binding Path=CodigoDane2}"/>
-						<GridViewColumn Header="MUNICIPIO" Width="100" DisplayMemberBinding="{Binding Path=Municipio}"/>
-					</GridView>
-				</ListView.View>
-			</ListView>
-		</WrapPanel>
+        <Grid x:Name="fileChooserPane" Margin="143,48,143,47">
+            <Label Content="Selección base de datos" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="18"/>
+            <Button Content="Elegir archivo" HorizontalAlignment="Center" Margin="0,204,0,0" VerticalAlignment="Top" Click="btnOpenFile_Click" FontFamily="Consolas" Background="#FFBE0C4D" Foreground="White" Height="23" Width="120" BorderThickness="0,1,1,1"/>
+
+        </Grid>
+
+
     </Grid>
 </Window>
