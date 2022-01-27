@@ -51,13 +51,13 @@
                 <Label Content="Z" FontFamily="Consolas"/>
             </ComboBox>
             <Button Click="btnFilter_Click" Content="Filtrar" HorizontalAlignment="Left" Margin="46,207,0,0" VerticalAlignment="Top" Background="#FFBE0C4D" FontFamily="Consolas" Foreground="White" Height="25" Width="92"/>
-            <ListView x:Name="ListViewPeople" FontFamily="Consolas" Width="562" Grid.ColumnSpan="2" Margin="185,68,15,48">
+            <ListView x:Name="listViewDane" FontFamily="Consolas" Width="562" Grid.ColumnSpan="2" Margin="185,68,15,48">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="REGIÓN" Width="100" DisplayMemberBinding="{Binding Region}"/>
-                        <GridViewColumn Header="CÓDIGO DANE" Width="120" DisplayMemberBinding="{Binding CodigoDane}"/>
+                        <GridViewColumn Header="CÓDIGO DANE" Width="120" DisplayMemberBinding="{Binding CDRegion}"/>
                         <GridViewColumn Header="DEPARTAMENTO" Width="120" DisplayMemberBinding="{Binding Departamento}"/>
-                        <GridViewColumn Header="CÓDIGO DANE" Width="120" DisplayMemberBinding="{Binding CodigoDane2}"/>
+                        <GridViewColumn Header="CÓDIGO DANE" Width="120" DisplayMemberBinding="{Binding CDDepartamento}"/>
                         <GridViewColumn Header="MUNICIPIO" Width="100" DisplayMemberBinding="{Binding Municipio}"/>
                     </GridView>
                 </ListView.View>

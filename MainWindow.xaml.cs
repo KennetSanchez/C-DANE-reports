@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Windows;
 using Microsoft.Win32;
+using System.Collections.ObjectModel;
 
 namespace C_DANE_reports
 {
@@ -36,7 +37,26 @@ namespace C_DANE_reports
             {
                 fileChooserPane.Visibility = Visibility.Collapsed;
                 tablePane.Visibility = Visibility.Visible;
+                readData(openFileDialog.FileName);
             }
+        }
+
+        public class Info
+        {
+            public string Region { get; set; }
+            public string CDRegion { get; set; }
+            public string Departamento { get; set; }
+            public string CDDepartamento { get; set; }
+            public string Municipio { get; set; }
+
+        }
+
+        private void readData(String path)
+        {
+            String[] lines = File.ReadAllLines(path);
+            ObservableCollection<Info> c = new ObservableCollection<Info>();
+            c.Add(new Info() { Region = "ejemplo", CDRegion = "ejemplo2", Departamento = "ejemplo3", CDDepartamento = "awfnoawf", Municipio = "awfaf" });
+            listViewDane.ItemsSource = c;
         }
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
