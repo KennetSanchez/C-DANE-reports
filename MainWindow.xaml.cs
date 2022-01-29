@@ -17,11 +17,12 @@ using System.Windows;
 using Microsoft.Win32;
 using System.Collections.ObjectModel;
 
+
+
+
 namespace C_DANE_reports
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         private String separator;
@@ -30,6 +31,10 @@ namespace C_DANE_reports
             separator = ",";
             InitializeComponent();
         }
+
+
+
+
 
         private void btnOpenFile_Click(object sender, RoutedEventArgs e)
         {
@@ -43,13 +48,16 @@ namespace C_DANE_reports
                 {
                     readData(openFileDialog.FileName);
                 }
-                
+
                 catch (FileNotFoundException exc)
                 {
                     Console.WriteLine(exc.ToString());
                 }
             }
         }
+
+
+
 
         public class Info
         {
@@ -59,23 +67,71 @@ namespace C_DANE_reports
             public string CDMunicipio { get; set; }
             public string Municipio { get; set; }
 
+
+
         }
+
+        String[] line = new String[5];
 
         private void readData(String path)
         {
             String[] lines = File.ReadAllLines(path);
             ObservableCollection<Info> c = new ObservableCollection<Info>();
-            for(int i = 1; i < 1121; i++)
+            for (int i = 1; i < 1121; i++)
             {
-                String[] line = lines[i].Split(separator);
-                c.Add(new Info() { Tipo=line[4],CDDepartamento=line[0],Departamento=line[2],CDMunicipio=line[1],Municipio=line[3]});
+                line = lines[i].Split(separator);
+                c.Add(new Info() { Tipo = line[4], CDDepartamento = line[0], Departamento = line[2], CDMunicipio = line[1], Municipio = line[3] });
             }
             listViewDane.ItemsSource = c;
         }
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
+            Chart c = new Chart();
+            
 
-        }    
+            var count = getTypesCount();
+            /*
+            c.islandsBar.Width = count[0];
+            c.townsBar.Width = count[1];
+            c.nonMunicipalizedAreaBar.Width = count[2];
+            */
+            c.Show();
+        }
+
+        public List<String> types { get; set; } 
+        private List<String> getTypes()
+        {
+            return new List<String>() { "Islas", "Municipios", "Áreas no municipalizadas" };
+        }
+
+        public List<int> typesCount { get; set; }
+        private List<int> getTypesCount()
+        {
+            int islands = 100, towns = 300, nonMunicipalizedAreas = 500;
+
+            /*
+             * foreach (String tipo in line[4])
+            {
+                switch (tipo)
+                {
+                    case "Municipio":
+                        islands = islands++;
+                        break;
+
+                    case "Isla":
+                        towns = towns++;
+                        break;
+
+                    case "Área no municipalizada":
+                        nonMunicipalizedAreas = nonMunicipalizedAreas++;
+                        break;
+                }
+            }
+            */
+            var count = new List<int> { islands, towns, nonMunicipalizedAreas};
+            return count;
+        }
     }
 }
+
