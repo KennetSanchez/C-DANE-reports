@@ -30,6 +30,7 @@ namespace C_DANE_reports
         {
             separator = ",";
             InitializeComponent();
+
         }
 
 
@@ -72,6 +73,8 @@ namespace C_DANE_reports
         }
 
         String[] line = new String[5];
+        int islands = 0, towns = 0, nonMunicipalizedAreas = 0;
+
 
         private void readData(String path)
         {
@@ -81,6 +84,19 @@ namespace C_DANE_reports
             {
                 line = lines[i].Split(separator);
                 c.Add(new Info() { Tipo = line[4], CDDepartamento = line[0], Departamento = line[2], CDMunicipio = line[1], Municipio = line[3] });
+
+                if (line[4].Equals("Municipio"))
+                {
+                    towns++;
+                }
+                else if (line[4].Equals("Isla"))
+                {
+                    islands++;
+                }
+                else
+                {
+                    nonMunicipalizedAreas++;
+                }
             }
             listViewDane.ItemsSource = c;
         }
@@ -88,14 +104,18 @@ namespace C_DANE_reports
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
             Chart c = new Chart();
-            
-
+           
             var count = getTypesCount();
-            /*
+            
             c.islandsBar.Width = count[0];
             c.townsBar.Width = count[1];
             c.nonMunicipalizedAreaBar.Width = count[2];
-            */
+
+            c.islandsAmount.Content = count[0];
+            c.townsAmount.Content = count[1];
+            c.nonMunicipalizedAmount.Content = count[2];
+
+
             c.Show();
         }
 
@@ -107,28 +127,7 @@ namespace C_DANE_reports
 
         public List<int> typesCount { get; set; }
         private List<int> getTypesCount()
-        {
-            int islands = 100, towns = 300, nonMunicipalizedAreas = 500;
-
-            /*
-             * foreach (String tipo in line[4])
-            {
-                switch (tipo)
-                {
-                    case "Municipio":
-                        islands = islands++;
-                        break;
-
-                    case "Isla":
-                        towns = towns++;
-                        break;
-
-                    case "Área no municipalizada":
-                        nonMunicipalizedAreas = nonMunicipalizedAreas++;
-                        break;
-                }
-            }
-            */
+        {         
             var count = new List<int> { islands, towns, nonMunicipalizedAreas};
             return count;
         }

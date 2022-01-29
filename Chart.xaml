@@ -5,26 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:C_DANE_reports"
         mc:Ignorable="d"
-        Title="Chart" Height="450" Width="800">
+        Title="Chart" Height="150" Width="1600">
     
-    <Window.DataContext>
-        <local:MainWindow/>
-    </Window.DataContext>
+    
     <Grid>
-        <StackPanel>
-            <ListBox x:Name="barChart" FontSize="30" Height="351">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Rectangle Height="40" Width="100" Fill="Cyan">
-                        </Rectangle>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-
-                <ListBoxItem x:Name="islandsBar"/>
-                <ListBoxItem x:Name="townsBar"/>
-                <ListBoxItem x:Name="nonMunicipalizedAreaBar"/>
-
-            </ListBox>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Width="181">
+                <Label FontFamily="Consolas" FontSize="13" Height="41">Islas</Label>
+                <Label FontFamily="Consolas" FontSize="13" Height="38">Municipios</Label>
+                <Label FontFamily="Consolas" FontSize="13" Height="38">Áreas no municipalizadas</Label>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Height="120" VerticalAlignment="Top">
+                <StackPanel Height="40" Orientation="Horizontal">
+                    <Rectangle x:Name="islandsBar" Height="40" Width="300" Fill="Red" HorizontalAlignment="Left"/>
+                    <Label x:Name="islandsAmount" FontFamily="Consolas" FontSize="10" VerticalAlignment="Center">s</Label>
+                </StackPanel>
+                <StackPanel Height="40" Orientation="Horizontal">
+                    <Rectangle x:Name="townsBar" Height="40" Width="200"  Fill="Green" HorizontalAlignment="Left"/>
+                    <Label x:Name="townsAmount" FontFamily="Consolas" FontSize="10" VerticalAlignment="Center">s</Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle x:Name="nonMunicipalizedAreaBar" Width="40" Height="40" Fill="Blue" HorizontalAlignment="Left"/>
+                    <Label x:Name="nonMunicipalizedAmount" FontFamily="Consolas" FontSize="10" VerticalAlignment="Center">s</Label>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>
