@@ -96,20 +96,7 @@ namespace C_DANE_reports
             dst.Show();
         }
 
-        
 
-        private void btnFilter_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        public List<String> types { get; set; } 
-        private List<String> getTypes()
-        {
-            return new List<String>() { "Islas", "Municipios", "Áreas no municipalizadas" };
-        }
-
-        public List<int> typesCount { get; set; }
         public List<int> getTypesCount()
         {         
             var count = new List<int> { islands, towns, nonMunicipalizedAreas};
