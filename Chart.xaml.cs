@@ -16,9 +16,17 @@ namespace C_DANE_reports
 {
     public partial class Chart : Window
     {
-        public Chart()
+        public Chart(List<int> count)
         {
             InitializeComponent();
+
+            islandsBar.Width = count[0];
+            townsBar.Width = count[1];
+            nonMunicipalizedAreaBar.Width = count[2];
+
+            islandsAmount.Content = count[0];
+            townsAmount.Content = count[1];
+            nonMunicipalizedAmount.Content = count[2];
         }
     }
 }

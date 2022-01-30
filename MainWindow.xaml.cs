@@ -33,10 +33,6 @@ namespace C_DANE_reports
 
         }
 
-
-
-
-
         private void btnOpenFile_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -44,7 +40,6 @@ namespace C_DANE_reports
             if (openFileDialog.ShowDialog() == true)
             {
                 fileChooserPane.Visibility = Visibility.Collapsed;
-                tablePane.Visibility = Visibility.Visible;
                 try
                 {
                     readData(openFileDialog.FileName);
@@ -57,9 +52,6 @@ namespace C_DANE_reports
             }
         }
 
-
-
-
         public class Info
         {
             public string Tipo { get; set; }
@@ -67,8 +59,6 @@ namespace C_DANE_reports
             public string Departamento { get; set; }
             public string CDMunicipio { get; set; }
             public string Municipio { get; set; }
-
-
 
         }
 
@@ -98,25 +88,19 @@ namespace C_DANE_reports
                     nonMunicipalizedAreas++;
                 }
             }
-            listViewDane.ItemsSource = c;
+
+            var count = getTypesCount();
+
+            DataSetTable dst = new DataSetTable(c, count);
+            this.Close();
+            dst.Show();
         }
+
+        
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
-            Chart c = new Chart();
-           
-            var count = getTypesCount();
-            
-            c.islandsBar.Width = count[0];
-            c.townsBar.Width = count[1];
-            c.nonMunicipalizedAreaBar.Width = count[2];
 
-            c.islandsAmount.Content = count[0];
-            c.townsAmount.Content = count[1];
-            c.nonMunicipalizedAmount.Content = count[2];
-
-
-            c.Show();
         }
 
         public List<String> types { get; set; } 
@@ -126,7 +110,7 @@ namespace C_DANE_reports
         }
 
         public List<int> typesCount { get; set; }
-        private List<int> getTypesCount()
+        public List<int> getTypesCount()
         {         
             var count = new List<int> { islands, towns, nonMunicipalizedAreas};
             return count;

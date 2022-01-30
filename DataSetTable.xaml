@@ -1,0 +1,61 @@
+﻿<Window x:Class="C_DANE_reports.DataSetTable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:C_DANE_reports"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Tabla de datos" Height="574" Width="800">
+        
+    <Grid x:Name="tablePane" HorizontalAlignment="Center" Width="800" Height="544" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="185*"/>
+            <ColumnDefinition Width="196*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Datos encontrados" HorizontalAlignment="Left" Margin="0,0,0,0" FontFamily="Consolas" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="23,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="140" FontFamily="Consolas" FontSize="14"><Run Language="es-mx" Text="Filtrar municipios por inicial"/></TextBlock>
+        <ComboBox  HorizontalAlignment="Left" Margin="47,182,0,0" VerticalAlignment="Top" Width="92" FontFamily="Consolas">
+            <Label Content="A" FontFamily="Consolas"/>
+            <Label Content="B" FontFamily="Consolas"/>
+            <Label Content="C" FontFamily="Consolas"/>
+            <Label Content="D" FontFamily="Consolas"/>
+            <Label Content="E" FontFamily="Consolas"/>
+            <Label Content="F" FontFamily="Consolas"/>
+            <Label Content="G" FontFamily="Consolas"/>
+            <Label Content="H" FontFamily="Consolas"/>
+            <Label Content="I" FontFamily="Consolas"/>
+            <Label Content="J" FontFamily="Consolas"/>
+            <Label Content="K" FontFamily="Consolas"/>
+            <Label Content="L" FontFamily="Consolas"/>
+            <Label Content="M" FontFamily="Consolas"/>
+            <Label Content="N" FontFamily="Consolas"/>
+            <Label Content="Ñ" FontFamily="Consolas"/>
+            <Label Content="O" FontFamily="Consolas"/>
+            <Label Content="P" FontFamily="Consolas"/>
+            <Label Content="Q" FontFamily="Consolas"/>
+            <Label Content="R" FontFamily="Consolas"/>
+            <Label Content="S" FontFamily="Consolas"/>
+            <Label Content="T" FontFamily="Consolas"/>
+            <Label Content="U" FontFamily="Consolas"/>
+            <Label Content="V" FontFamily="Consolas"/>
+            <Label Content="W" FontFamily="Consolas"/>
+            <Label Content="X" FontFamily="Consolas"/>
+            <Label Content="Y" FontFamily="Consolas"/>
+            <Label Content="Z" FontFamily="Consolas"/>
+        </ComboBox>
+        <Button Click="BtnFilter_Click" Content="Filtrar" HorizontalAlignment="Left" Margin="47,228,0,0" VerticalAlignment="Top" Background="#FFBE0C4D" FontFamily="Consolas" Foreground="White" Height="25" Width="92"/>
+        <ListView x:Name="listViewDane" FontFamily="Consolas" Width="562" Grid.ColumnSpan="2" Margin="185,68,15,48">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="TIPO" Width="100" DisplayMemberBinding="{Binding Tipo}"/>
+                    <GridViewColumn Header="CÓDIGO DANE" Width="120" DisplayMemberBinding="{Binding CDDepartamento}"/>
+                    <GridViewColumn Header="DEPARTAMENTO" Width="120" DisplayMemberBinding="{Binding Departamento}"/>
+                    <GridViewColumn Header="CÓDIGO DANE" Width="120" DisplayMemberBinding="{Binding CDMunicipio}"/>
+                    <GridViewColumn Header="MUNICIPIO" Width="100" DisplayMemberBinding="{Binding Municipio}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Click="BtnShowChart_Click" Content="Ver gráfico" HorizontalAlignment="Left" Margin="342,0,0,18" Background="#FFBE0C4D" FontFamily="Consolas" Foreground="White" Width="92" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>

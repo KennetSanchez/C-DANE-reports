@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:C_DANE_reports"
         mc:Ignorable="d"
-        Title="Chart" Height="150" Width="1600">
+        WindowStartupLocation="CenterScreen"
+        Title="Gráfico de barras" Height="150" Width="1600">
     
     
     <Grid>
