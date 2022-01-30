@@ -169,6 +169,11 @@ namespace C_DANE_reports
             Chart ch = new Chart(count);
             ch.Show();
         }
+
+        private void listViewDane_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 
 }

@@ -6,16 +6,16 @@
         xmlns:local="clr-namespace:C_DANE_reports"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Tabla de datos" Height="574" Width="800">
-        
-    <Grid x:Name="tablePane" HorizontalAlignment="Center" Width="800" Height="544" VerticalAlignment="Center">
+        Title="Tabla de datos" Height="574" Width="950">
+
+    <Grid x:Name="tablePane" HorizontalAlignment="Center" Width="950" Height="544" VerticalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="185*"/>
             <ColumnDefinition Width="196*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Datos encontrados" HorizontalAlignment="Left" Margin="0,0,0,0" FontFamily="Consolas" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
+        <Label Content="Datos encontrados" HorizontalAlignment="Left" Margin="62,10,0,0" FontFamily="Consolas" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="23,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="140" FontFamily="Consolas" FontSize="14"><Run Language="es-mx" Text="Filtrar municipios por inicial"/></TextBlock>
-        <ComboBox  Name="cmbLetter" HorizontalAlignment="Left" Margin="47,182,0,0" VerticalAlignment="Top" Width="92" FontFamily="Consolas" >
+        <ComboBox  Name="cmbLetter" HorizontalAlignment="Left" Margin="23,181,0,0" VerticalAlignment="Top" Width="116" FontFamily="Consolas" >
             <ComboBoxItem Content="A" FontFamily="Consolas"></ComboBoxItem>
             <ComboBoxItem Content="B" FontFamily="Consolas"></ComboBoxItem>
             <ComboBoxItem Content="C" FontFamily="Consolas"></ComboBoxItem>
@@ -43,19 +43,32 @@
             <ComboBoxItem Content="X" FontFamily="Consolas"></ComboBoxItem>
             <ComboBoxItem Content="Y" FontFamily="Consolas"></ComboBoxItem>
             <ComboBoxItem Content="Z" FontFamily="Consolas"></ComboBoxItem>
+
         </ComboBox>
-        <Button Click="BtnFilter_Click" Content="Filtrar" HorizontalAlignment="Left" Margin="47,228,0,0" VerticalAlignment="Top" Background="#FFBE0C4D" FontFamily="Consolas" Foreground="White" Height="25" Width="92"/>
-        <ListView x:Name="listViewDane" FontFamily="Consolas" Width="562" Grid.ColumnSpan="2" Margin="185,68,15,48">
+        <Button Click="BtnFilter_Click" Content="Filtrar" HorizontalAlignment="Left" Margin="23,228,0,0" VerticalAlignment="Top" Background="#FFBE0C4D" FontFamily="Consolas" Foreground="White" Height="25" Width="116">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <ListView x:Name="listViewDane" FontFamily="Consolas" Grid.ColumnSpan="2" Margin="204,68,21,48" SelectionChanged="listViewDane_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="TIPO" Width="100" DisplayMemberBinding="{Binding Tipo}"/>
-                    <GridViewColumn Header="CÓDIGO DANE" Width="120" DisplayMemberBinding="{Binding CDDepartamento}"/>
-                    <GridViewColumn Header="DEPARTAMENTO" Width="120" DisplayMemberBinding="{Binding Departamento}"/>
-                    <GridViewColumn Header="CÓDIGO DANE" Width="120" DisplayMemberBinding="{Binding CDMunicipio}"/>
-                    <GridViewColumn Header="MUNICIPIO" Width="100" DisplayMemberBinding="{Binding Municipio}"/>
+                    <GridViewColumn Header="CÓDIGO DANE" Width="100" DisplayMemberBinding="{Binding CDDepartamento}"/>
+                    <GridViewColumn Header="DEPARTAMENTO" Width="200" DisplayMemberBinding="{Binding Departamento}"/>
+                    <GridViewColumn Header="CÓDIGO DANE" Width="100" DisplayMemberBinding="{Binding CDMunicipio}"/>
+                    <GridViewColumn Header="MUNICIPIO" Width="195" DisplayMemberBinding="{Binding Municipio}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Click="BtnShowChart_Click" Content="Ver gráfico" HorizontalAlignment="Left" Margin="342,0,0,18" Background="#FFBE0C4D" FontFamily="Consolas" Foreground="White" Width="92" Grid.ColumnSpan="2" Height="25" VerticalAlignment="Bottom"/>
+        <Button Click="BtnShowChart_Click" Content="Ver gráfico" HorizontalAlignment="Left" Margin="12,0,0,10" Background="#FFBE0C4D" FontFamily="Consolas" Foreground="White" Width="92" Height="25" VerticalAlignment="Bottom" Grid.Column="1">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>
