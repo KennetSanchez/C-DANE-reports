@@ -60,7 +60,14 @@ namespace C_DANE_reports
             public string CDMunicipio { get; set; }
             public string Municipio { get; set; }
 
+
+            public string getMunicipio()
+            {
+                return Municipio;
+            }
+
         }
+
 
         String[] line = new String[5];
         int islands = 0, towns = 0, nonMunicipalizedAreas = 0;

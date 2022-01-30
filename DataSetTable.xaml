@@ -15,34 +15,34 @@
         </Grid.ColumnDefinitions>
         <Label Content="Datos encontrados" HorizontalAlignment="Left" Margin="0,0,0,0" FontFamily="Consolas" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="23,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="140" FontFamily="Consolas" FontSize="14"><Run Language="es-mx" Text="Filtrar municipios por inicial"/></TextBlock>
-        <ComboBox  HorizontalAlignment="Left" Margin="47,182,0,0" VerticalAlignment="Top" Width="92" FontFamily="Consolas">
-            <Label Content="A" FontFamily="Consolas"/>
-            <Label Content="B" FontFamily="Consolas"/>
-            <Label Content="C" FontFamily="Consolas"/>
-            <Label Content="D" FontFamily="Consolas"/>
-            <Label Content="E" FontFamily="Consolas"/>
-            <Label Content="F" FontFamily="Consolas"/>
-            <Label Content="G" FontFamily="Consolas"/>
-            <Label Content="H" FontFamily="Consolas"/>
-            <Label Content="I" FontFamily="Consolas"/>
-            <Label Content="J" FontFamily="Consolas"/>
-            <Label Content="K" FontFamily="Consolas"/>
-            <Label Content="L" FontFamily="Consolas"/>
-            <Label Content="M" FontFamily="Consolas"/>
-            <Label Content="N" FontFamily="Consolas"/>
-            <Label Content="Ñ" FontFamily="Consolas"/>
-            <Label Content="O" FontFamily="Consolas"/>
-            <Label Content="P" FontFamily="Consolas"/>
-            <Label Content="Q" FontFamily="Consolas"/>
-            <Label Content="R" FontFamily="Consolas"/>
-            <Label Content="S" FontFamily="Consolas"/>
-            <Label Content="T" FontFamily="Consolas"/>
-            <Label Content="U" FontFamily="Consolas"/>
-            <Label Content="V" FontFamily="Consolas"/>
-            <Label Content="W" FontFamily="Consolas"/>
-            <Label Content="X" FontFamily="Consolas"/>
-            <Label Content="Y" FontFamily="Consolas"/>
-            <Label Content="Z" FontFamily="Consolas"/>
+        <ComboBox  Name="cmbLetter" HorizontalAlignment="Left" Margin="47,182,0,0" VerticalAlignment="Top" Width="92" FontFamily="Consolas" >
+            <ComboBoxItem Content="A" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="B" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="C" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="D" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="E" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="F" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="G" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="H" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="I" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="J" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="K" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="L" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="M" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="N" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="Ñ" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="O" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="P" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="Q" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="R" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="S" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="T" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="U" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="V" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="W" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="X" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="Y" FontFamily="Consolas"></ComboBoxItem>
+            <ComboBoxItem Content="Z" FontFamily="Consolas"></ComboBoxItem>
         </ComboBox>
         <Button Click="BtnFilter_Click" Content="Filtrar" HorizontalAlignment="Left" Margin="47,228,0,0" VerticalAlignment="Top" Background="#FFBE0C4D" FontFamily="Consolas" Foreground="White" Height="25" Width="92"/>
         <ListView x:Name="listViewDane" FontFamily="Consolas" Width="562" Grid.ColumnSpan="2" Margin="185,68,15,48">
